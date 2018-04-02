@@ -1,36 +1,41 @@
-<!doctype html>
-<html lang="en">
+<?php include('server.php') ?>
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/login_css/style.css">
-    <title>The Wall</title>
+	<title>Registration system PHP and MySQL</title>
+	<link rel="stylesheet" type="text/css" href="css/login_css/style.css">
 </head>
 <body>
+	<div class="header">
+		<h2>Register</h2>
+	</div>
+	
+	<form method="post" action="register.php">
 
+		<?php include('errors.php'); ?>
 
-
-<div class="login_border">
-    <h1>The Wall</h1>
-    <form method="post" action="verwerk/verwerk_register.php">
-        <input class="login_input" type="text" placeholder="gebruikersnaam" name="naam">
-        <br><br>
-        <input class="login_input" type="email" placeholder="emailadres" name="mailadres" >
-        <br><br>
-        <input class="login_input" type="password" placeholder="wachtwoord" name="wachtwoord_1">
-        <br><br>
-        <input class="login_input" type="password" placeholder="herhaal wachtwoord" name="wachtwoord_2">
-        <br><br>
-        <input type="submit" class="login_submit" name="login_user" value="registreer">
-    </form>
-    <div class="login_links">
-        <h2><a href="gast.php">ga verder als gast</a></h2>
-        <br>
-        <a class="login_register" href="index.php">heeft u al een account (klik hier)</a>
-    </div>
-</div>
+		<div class="input-group">
+			<label>Username</label>
+			<input type="text" name="username" value="<?php echo $username; ?>">
+		</div>
+		<div class="input-group">
+			<label>Email</label>
+			<input type="email" name="email" value="<?php echo $email; ?>">
+		</div>
+		<div class="input-group">
+			<label>Password</label>
+			<input type="password" name="password_1">
+		</div>
+		<div class="input-group">
+			<label>Confirm password</label>
+			<input type="password" name="password_2">
+		</div>
+		<div class="input-group">
+			<button type="submit" class="btn" name="reg_user">Register</button>
+		</div>
+		<p>
+			Already a member? <a href="login.php">Sign in</a>
+		</p>
+	</form>
 </body>
 </html>
-

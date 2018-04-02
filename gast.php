@@ -14,7 +14,7 @@
 <div class="navbar" id="navbar">
     <a href="gast.php">Home</a>
     <a href="">contact</a>
-    <a href="index.php">login</a>
+    <a href="backup/index.php">login</a>
 
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
