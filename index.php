@@ -14,12 +14,12 @@
 
 <div class="login_border">
     <h1>The Wall</h1>
-    <form action="">
-        <input class="login_input" type="text" placeholder="gebruikersnaam">
+    <form class="login" method="post" action="verwerk/verwerk_login.php">
+        <input class="login_input" type="text" placeholder="gebruikersnaam" name="naam">
         <br><br>
-        <input class="login_input" type="password" placeholder="wachtwoord">
+        <input class="login_input" type="password" placeholder="wachtwoord" name="wachtwoord">
         <br><br>
-        <input class="login_submit" type="submit" value="login">
+        <input type="submit" class="login_submit" name="login_user" value="login">
     </form>
     <div class="login_links">
         <h2><a href="gast.php">ga verder als gast</a></h2>
@@ -27,5 +27,7 @@
         <a class="login_register" href="register.php">registeren? (klik hier)</a>
     </div>
 </div>
+
+
 </body>
 </html>

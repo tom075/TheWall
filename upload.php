@@ -11,15 +11,19 @@
 <body>
 
 <div class="upload_border">
+    <h1>upload afbeelding</h1>
     <form action="upload.php" method="post" enctype="multipart/form-data">
         <?php include('uploadProcess.php'); ?>
         <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
         <input type="file" name="userimage" accept="image/*" onchange="preview_image(event)">
         <img src="css/upload_css/afb/Upload.svg" id="output_image"/>
         <br><br>
-        <textarea rows="4" cols="50" name="omschrijving" form="usrform">Typ hier uw omschrijving... </textarea>
-        <br>
-        <input type="submit" name="submit" value="upload image">
+        <textarea name="omschrijving" cols="40" rows="5"></textarea>
+        <br><br>
+        <a href="album.php" class="cancel">cancel</a>
+        <input class="upload_submit" type="submit" name="submit" value="upload afbeelding">
+
+
     </form>
 </div>
 
@@ -32,6 +36,11 @@
             output.src = reader.result;
         }
         reader.readAsDataURL(event.target.files[0]);
+    }
+
+
+    function goBack() {
+        window.history.back();
     }
 
 </script>

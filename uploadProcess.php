@@ -6,6 +6,7 @@ $temp_location = $_FILES['userimage']['tmp_name'];
 $target_location = 'images/' . time() . $_FILES['userimage']['name'] ;
 
 $omschrijving = $_POST['omschrijving'];
+
 if ($_FILES['userimage']['size'] < 2000000)
 {
     $result = move_uploaded_file($temp_location, $target_location);
