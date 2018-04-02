@@ -12,7 +12,7 @@ require  ('../../private/thewall_db.php');
 	$db = mysqli_connect(HOST, USER, PASS, DB);
 
 	// REGISTER USER
-	if (isset($_POST['reg_user'])) { 
+	if (isset($_POST['reg_user'])) {
 		// receive all input values from the form
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$email = mysqli_real_escape_string($db, $_POST['email']);
