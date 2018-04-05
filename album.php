@@ -33,17 +33,23 @@ $query = "SELECT * FROM image_TheWall";
 
 $result = mysqli_query($dbc, $query) or die ('gaat niet goed');
 
+
+
+
 echo '<div class="wrapper">';
 
 while ($row = mysqli_fetch_array($result)){
+//    var_dump($row);
     $locatie = $row['locatie'];
-    $omschrijving = $row['omschrijving'];
+    $id = $row['id'];
+
+//    $omschrijving = $row['omschrijving'];
 
 
 
-    echo '<img class="image" src="' . $locatie . '" />';
+    echo '<img class="image" id="image '.$id .'" src="' . $locatie . '" />';
 }
-echo '</div>'
+echo '</div>';
 ?>
 
 <script>

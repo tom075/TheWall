@@ -14,7 +14,7 @@
     <h1>upload afbeelding</h1>
     <form action="upload.php" method="post" enctype="multipart/form-data">
         <?php include('uploadProcess.php'); ?>
-        <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+        <input type="hidden" name="MAX_FILE_SIZE" value="20000000000">
         <input type="file" name="userimage" accept="image/*" onchange="preview_image(event)">
         <img src="css/upload_css/afb/Upload.svg" id="output_image"/>
         <br><br>
