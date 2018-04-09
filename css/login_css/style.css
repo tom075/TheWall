@@ -1,42 +1,158 @@
-* {
-	margin: 0px;
-	padding: 0px;
-}
-body {
-	font-size: 120%;
+/** {*/
+	/*margin: 0px;*/
+	/*padding: 0px;*/
+/*}*/
+/*body {*/
+	/*font-size: 120%;*/
+	/*background-image: url("afb/wallpaper.jpg");*/
+/*}*/
+
+/*.header {*/
+	/*width: 600px;*/
+	/*margin: 50px auto 0px;*/
+	/*color: white;*/
+	/*background: black;*/
+	/*text-align: center;*/
+	/*border-radius: 10px 10px 0px 0px;*/
+	/*padding: 20px;*/
+/*}*/
+/*form, .content {*/
+	/*width: 600px;*/
+
+	/*margin: 0px auto;*/
+	/*padding: 20px;*/
+	/*background: white;*/
+	/*border-radius: 0px 0px 10px 10px;*/
+/*}*/
+/*.input-group {*/
+	/*margin: 10px 0px 10px 0px;*/
+
+/*}*/
+/*.btn{*/
+	/*margin-bottom: 40px;*/
+/*}*/
+
+/*.input-group label {*/
+	/*display: block;*/
+	/*text-align: left;*/
+	/*margin: 3px;*/
+/*}*/
+/*.input-group input {*/
+	/*height: 30px;*/
+	/*width: 93%;*/
+	/*padding: 5px 10px;*/
+	/*font-size: 16px;*/
+	/*border-radius: 5px;*/
+	/*border: 1px solid gray;*/
+/*}*/
+/*.btn {*/
+	/*padding: 10px;*/
+	/*font-size: 15px;*/
+	/*color: white;*/
+	/*background: black;*/
+	/*border: none;*/
+	/*border-radius: 5px;*/
+/*}*/
+/*.error {*/
+	/*width: 92%; */
+	/*margin: 0px auto;*/
+	/*padding: 10px; */
+	/*border: 1px solid black;*/
+	/*color: white;*/
+	/*background: dodgerblue;*/
+	/*border-radius: 5px;*/
+	/*text-align: left;*/
+/*}*/
+
+/*@media only screen and (max-width: 800px) {*/
+
+	/*body{*/
+		/*background-image: url("");*/
+		/*background: white;*/
+		/*border-radius: 0;*/
+	/*}*/
+	/*.header{*/
+		/*width: 100%;*/
+		/*border-radius: 0;*/
+	/*}*/
+	/*form, .content {*/
+		/*width: 100%;*/
+		/*border-radius: 0;*/
+	/*}*/
+	/*.error{*/
+		/*width: 100%;*/
+		/*margin-left: -1.2em;*/
+	/*}*/
+	/*.input-group {*/
+		/*margin: 10px 0px 10px 0px;*/
+
+	/*}*/
+	/*.input-group input {*/
+		/*width: 80%;*/
+		/*margin-right: 100px;*/
+
+	/*}*/
+
+	/*}*/
+html{
 	background-image: url("afb/wallpaper.jpg");
 }
 
-.header {
-	width: 600px;
-	margin: 50px auto 0px;
-	color: white;
-	background: black;
-	text-align: center;
-	border-radius: 10px 10px 0px 0px;
-	padding: 20px;
+#canvas{
+	border: black;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
 }
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: white;
+	margin: 5px auto; /* 15% from the top and centered */
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+
+}
+
+
+
+
 form, .content {
 	width: 600px;
 
 	margin: 0px auto;
 	padding: 20px;
 	background: white;
-	border-radius: 0px 0px 10px 10px;
+	border-radius: 1em;
 }
 .input-group {
 	margin: 10px 0px 10px 0px;
 
 }
-.btn{
-	margin-bottom: 40px;
-}
+
+
 
 .input-group label {
 	display: block;
 	text-align: left;
 	margin: 3px;
 }
+
 .input-group input {
 	height: 30px;
 	width: 93%;
@@ -45,52 +161,23 @@ form, .content {
 	border-radius: 5px;
 	border: 1px solid gray;
 }
-.btn {
-	padding: 10px;
-	font-size: 15px;
-	color: white;
-	background: black;
-	border: none;
-	border-radius: 5px;
-}
-.error {
-	width: 92%; 
-	margin: 0px auto;
-	padding: 10px; 
-	border: 1px solid black;
-	color: white;
-	background: dodgerblue;
-	border-radius: 5px;
-	text-align: left;
+
+/* Add Zoom Animation */
+.animate {
+	-webkit-animation: animatezoom 0.6s;
+	animation: animatezoom 0.6s
 }
 
-@media only screen and (max-width: 800px) {
+@-webkit-keyframes animatezoom {
+	from {-webkit-transform: scale(0)}
+	to {-webkit-transform: scale(1)}
+}
 
-	body{
-		background-image: url("");
-		background: white;
-		border-radius: 0;
-	}
-	.header{
-		width: 100%;
-		border-radius: 0;
-	}
-	form, .content {
-		width: 100%;
-		border-radius: 0;
-	}
-	.error{
-		width: 100%;
-		margin-left: -1.2em;
-	}
-	.input-group {
-		margin: 10px 0px 10px 0px;
+@keyframes animatezoom {
+	from {transform: scale(0)}
+	to {transform: scale(1)}
+}
 
-	}
-	.input-group input {
-		width: 80%;
-		margin-right: 100px;
-
-	}
-
-	}
+#clickButton{
+	display: none;
+}

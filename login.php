@@ -2,36 +2,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registration system PHP and MySQL</title>
-	<link rel="stylesheet" type="text/css" href="css/login_css/style.css">
+    <link rel="stylesheet" href="css/login_css/style.css">
+    <meta charset="utf-8">
+    <title>Huisje</title>
 </head>
 <body>
+<div class="wrapper">
+    <!-- Button to open the modal login form -->
+    <button id="clickButton" onclick="document.getElementById('id01').style.display='block'">Login</button>
 
-	<div class="header">
-		<h2>Login</h2>
-	</div>
+    <!-- The Modal -->
+    <div id="id01" class="modal">
+          <span onclick="document.getElementById('id01').style.display='none'"
 
-	<form method="post" action="login.php">
+        <!-- Modal Content -->
+        <form class="modal-content animate" action="login.php">
+            <?php include('errors.php'); ?>
+            <div class="container">
+                <div class="input-group">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="username" required autofocus>
+                </div>
 
-		<?php include('errors.php'); ?>
+                <div class="input-group">
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" required>
+                </div>
 
-		<div class="input-group">
-			<label>Username</label>
-			<input type="text" name="username" required autofocus>
-		</div>
-		<div class="input-group">
-			<label>Password</label>
-			<input type="password" name="password" required>
-		</div>
-		<div class="input-group">
-			<button type="submit" class="btn" name="login_user">Login</button>
-		</div>
-		<p>
-			Not yet a member? <a href="register.php">Sign up</a>
-		</p>
-	</form>
+                <div>
+                    <button class="cancelbtn" type="submit">Login</button>
+                </div>
+            </div>
+
+            <p>
+                Not yet a member? <a href="register.php">Sign up</a>
+            </p>
+        </form>
+    </div>
+    <canvas onmouseover="myFunction()" id="canvas" style="background-color: transparent;"></canvas>
+</div>
+<script src="js/script.js" charset="utf-8"></script>
+<script>
+
+    function myFunction() {
+        document.getElementById("clickButton").click();
+    }
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 
 
+
+
+
+}
+</script>
 </body>
 </html>
-
