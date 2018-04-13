@@ -1,3 +1,6 @@
+<?php
+require ("code/session.php");
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,40 +10,101 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/album_css/style.css">
     <link rel="stylesheet" href="css/navbar_css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
     <title>Document</title>
 </head>
 
 
 <div class="navbar" id="navbar">
-    <a href="gast.php">Home</a>
     <a href="">contact</a>
-    <a href="backup/index.php">login</a>
+    <a href="login.php">login</a>
+
 
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 
 
 <?php
-require ("../../private/thewall_db.php");
+require("../../private/thewall_db.php");
 
-$dbc = mysqli_connect(HOST, USER, PASS, DB );
+$dbc = mysqli_connect(HOST, USER, PASS, DB);
 
-$query = "SELECT locatie FROM image_TheWall";
+$query = "SELECT * FROM image_TheWall";
 
 $result = mysqli_query($dbc, $query) or die ('gaat niet goed');
 
+
 echo '<div class="wrapper">';
 
-while ($row = mysqli_fetch_array($result)){
+while ($row = mysqli_fetch_array($result)) {
+//    var_dump($row);
     $locatie = $row['locatie'];
+    $id = $row['id'];
+    $omschrijving = $row['omschrijving'];
+
+//    $omschrijving = $row['omschrijving'];
 
 
+    echo "<button id='modalBtn" . $id . "' class='button'><img class='image' src='" . $locatie . "' alt=''></button>";
 
-    echo '<img class="image" src="' . $locatie . '" />';
+    echo "<div id='simpleModal" . $id . "' class='modal'>
+    <div class='modal-content'>
+        <div class='modal-header'>
+            <span class='closeBtn" . $id . "'>&times;</span>
+            <h2>modal header</h2>
+        </div>
+        <div class='modal-body'>
+            <img id='image_groot' src='" . $locatie . "' alt=''>
+            <p>" . $omschrijving . "</p>
+        </div>
+        <div class='modal-footer'>
+            <h3>modal footer</h3>
+        </div>
+    </div>
+</div>
+<script>
+//Get modal elements
+var modal".$id." = document.getElementById('simpleModal".$id."');
+//get modal button
+
+var modalBtn".$id." = document.getElementById('modalBtn".$id."');
+
+//close button
+var closeBtn".$id." = document.getElementsByClassName('closeBtn".$id."')[0];
+
+//listen for a click
+modalBtn".$id.".addEventListener('click', openModal".$id.");
+
+//listen for close
+closeBtn".$id.".addEventListener('click', closeModal".$id.");
+//outside click
+window.addEventListener('click', clickOutside".$id.");
+
+//funcite open modal
+function openModal".$id."() {
+    modal".$id.".style.display = 'block';
 }
-echo '</div>'
+
+//funcite close modal
+function closeModal".$id."() {
+    modal".$id.".style.display = 'none';
+}
+
+function clickOutside".$id."(e){
+    if(e.target == modal".$id."){
+        modal".$id.".style.display = 'none';
+    }
+}
 
 
+
+</script>
+
+";
+
+}
+echo '</div>';
 ?>
 
 <script>
@@ -52,6 +116,9 @@ echo '</div>'
             x.className = "navbar";
         }
     }
+
+
 </script>
+<script src="js/main.js"></script>
 </body>
 </html>

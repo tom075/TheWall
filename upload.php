@@ -1,7 +1,12 @@
+<?php
+require ("code/session.php");
+?>
 <!doctype html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="css/upload_css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -20,7 +25,7 @@
         <br><br>
         <textarea name="omschrijving" cols="40" rows="5"></textarea>
         <br><br>
-        <a href="album.php" class="cancel">cancel</a>
+        <a href="index.php" class="cancel">cancel</a>
         <input class="upload_submit" type="submit" name="submit" value="upload afbeelding">
 
 

@@ -1,6 +1,8 @@
 
 html{
 	background-image: url("afb/wallpaper.jpg");
+	font-family: 'Roboto', sans-serif;
+
 }
 
 #canvas{
@@ -10,7 +12,12 @@ html{
 	z-index: 0;
 }
 
-/* The Modal (background) */
+.btn{
+    font-size: 2em;
+    background: black;
+    color: white;
+    border-radius: 4px;
+}
 .modal {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
@@ -21,11 +28,10 @@ html{
 	height: 100%; /* Full height */
 	overflow: auto; /* Enable scroll if needed */
 	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	background-color: rgba(0,0,0,0.4);
 	padding-top: 60px;
 }
 
-/* Modal Content/Box */
 .modal-content {
 	background-color: white;
 	margin: 5px auto; /* 15% from the top and centered */
@@ -35,7 +41,11 @@ html{
 }
 
 
-
+.register{
+    border-top: solid;
+    margin-top: 1.5em;
+    font-size: 1.5em;
+}
 
 form, .content {
 	width: 600px;
@@ -85,4 +95,9 @@ form, .content {
 
 #clickButton{
 	display: none;
+}
+
+a{
+    text-decoration: none;
+    color: grey;
 }

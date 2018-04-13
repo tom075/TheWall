@@ -3,64 +3,60 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/login_css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <meta charset="utf-8">
-    <title>Huisje</title>
+    <title>The Wall - Login</title>
 </head>
 <body>
 <div class="wrapper">
-    <!-- Button to open the modal login form -->
-    <button id="clickButton" onclick="document.getElementById('id01').style.display='block'">Login</button>
-
-    <!-- The Modal -->
     <div id="id01" class="modal">
-          <span onclick="document.getElementById('id01').style.display='none'"
 
-        <!-- Modal Content -->
-        <form class="modal-content animate" action="login.php">
+        <div class="container">
+
+            <form class="modal-content animate" action="login.php" method="post">
             <?php include('errors.php'); ?>
-            <div class="container">
                 <div class="input-group">
-                    <label for="uname"><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" name="username" required autofocus>
-                </div>
-
-                <div class="input-group">
-                    <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="password" required>
-                </div>
-
-                <div>
-                    <button class="cancelbtn" type="submit">Login</button>
-                </div>
+                <label>Gebruikersnaam</label>
+                <input type="text" name="username" required autofocus>
             </div>
-
+            <div class="input-group">
+                <label>Wachtwoord</label>
+                <input type="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <button type="submit" class="btn" name="login_user">Login</button>
+            </div>
+                <div class="register">
             <p>
-                Not yet a member? <a href="register.php">Sign up</a>
+                Heeft u nog geen account? <a href="register.php">Maak hier een account aan!</a>
             </p>
-        </form>
+                <p>
+                    <a href="gast.php">ga door als gast </a>
+                </p>
+                </div>
+            </form>
     </div>
-    <canvas onmouseover="myFunction()" id="canvas" style="background-color: transparent;"></canvas>
+    </div>
+    <canvas  id="canvas" ></canvas>
 </div>
 <script src="js/script.js" charset="utf-8"></script>
 <script>
 
-    function myFunction() {
-        document.getElementById("clickButton").click();
-    }
-// Get the modal
+
 var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-
-
-
-
-
+function openModal() {
+    setTimeout(function () {
+       modal.style.display="block";
+    }, 1);
 }
+
+
+openModal();
+
+
+
 </script>
 </body>
 </html>
+

@@ -1,3 +1,6 @@
+<?php
+require ("code/session.php");
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,12 +10,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/album_css/style.css">
     <link rel="stylesheet" href="css/navbar_css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
     <title>Document</title>
 </head>
 
 
 <div class="navbar" id="navbar">
-    <a href="album.php">Home</a>
     <a href="upload.php">upload</a>
     <a href="">mijn foto's</a>
     <a href="">contact</a>
@@ -44,7 +48,7 @@ while ($row = mysqli_fetch_array($result)) {
 //    $omschrijving = $row['omschrijving'];
 
 
-    echo "<button id='modalBtn" . $id . "' class='button'><img src='" . $locatie . "' alt=''></button>";
+    echo "<button id='modalBtn" . $id . "' class='button'><img class='image' src='" . $locatie . "' alt=''></button>";
 
     echo "<div id='simpleModal" . $id . "' class='modal'>
     <div class='modal-content'>
@@ -55,9 +59,6 @@ while ($row = mysqli_fetch_array($result)) {
         <div class='modal-body'>
             <img id='image_groot' src='" . $locatie . "' alt=''>
             <p>" . $omschrijving . "</p>
-        </div>
-        <div class='modal-footer'>
-            <h3>modal footer</h3>
         </div>
     </div>
 </div>
@@ -89,6 +90,12 @@ function closeModal".$id."() {
     modal".$id.".style.display = 'none';
 }
 
+function clickOutside".$id."(e){
+    if(e.target == modal".$id."){
+        modal".$id.".style.display = 'none';
+    }
+}
+
 
 
 </script>
@@ -114,4 +121,3 @@ echo '</div>';
 <script src="js/main.js"></script>
 </body>
 </html>
-

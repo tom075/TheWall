@@ -23,8 +23,7 @@ if ($result){
     $result = mysqli_query($dbc, $query);
 
     mysqli_close($dbc);
-    var_dump($result);
-    echo "uw afbeelding is geupload";
+    header("location: index.php");
 }
 ?>
 

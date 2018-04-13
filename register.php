@@ -4,6 +4,8 @@
 <head>
 	<title>Registration system PHP and MySQL</title>
 	<link rel="stylesheet" type="text/css" href="css/login_css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
 </head>
 <body>
 	<div class="header">
