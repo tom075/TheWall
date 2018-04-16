@@ -2,7 +2,6 @@
 require  ('../../private/thewall_db.php');
 
 	session_start();
-
 	// variable declaration
 	$username = "";
 	$email    = "";
@@ -20,12 +19,12 @@ require  ('../../private/thewall_db.php');
 		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 
 		// form validation: ensure that the form is correctly filled
-		if (empty($username)) { array_push($errors, "Username is required"); }
-		if (empty($email)) { array_push($errors, "Email is required"); }
-		if (empty($password_1)) { array_push($errors, "Password is required"); }
+		if (empty($username)) { array_push($errors, "Gebruikersnaam is verplicht"); }
+		if (empty($email)) { array_push($errors, "Email is verplicht"); }
+		if (empty($password_1)) { array_push($errors, "Wachtwoord is verplicht"); }
 
 		if ($password_1 != $password_2) {
-			array_push($errors, "The two passwords do not match");
+			array_push($errors, "De twee wachtwoorden komen niet overeen");
 		}
 
 		// register user if there are no errors in the form
@@ -36,7 +35,7 @@ require  ('../../private/thewall_db.php');
 			mysqli_query($db, $query);
 
 			$_SESSION['username'] = $username;
-			$_SESSION['success'] = "You are now logged in";
+			$_SESSION['success'] = "U bent nu ingelogd";
 			header('location: index.php');
 		}
 
@@ -50,23 +49,22 @@ require  ('../../private/thewall_db.php');
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 
 		if (empty($username)) {
-			array_push($errors, "Username is required");
+			array_push($errors, "Gebruikersnaam is verplicht");
 		}
 		if (empty($password)) {
-			array_push($errors, "Password is required");
+			array_push($errors, "Wachtwoord is verplicht");
 		}
 
 		if (count($errors) == 0) {
 			$password = md5($password);
 			$query = "SELECT * FROM login_TheWall WHERE username='$username' AND password='$password'";
 			$results = mysqli_query($db, $query);
-
 			if (mysqli_num_rows($results) == 1) {
 				$_SESSION['username'] = $username;
-				$_SESSION['success'] = "You are now logged in";
+                $_SESSION['success'] = "U bent nu ingelogd";
 				header('location: index.php');
 			}else {
-				array_push($errors, "Wrong username/password combination");
+				array_push($errors, "Verkeerde Gebruikersnaam/Wachtwoord combinatie");
 			}
 		}
 	}

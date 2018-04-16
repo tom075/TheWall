@@ -55,5 +55,8 @@ body {
         text-align: left;
 
     }
+    .welkom{
+      display: none;
+    }
 }
 

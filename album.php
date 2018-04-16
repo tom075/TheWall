@@ -1,5 +1,9 @@
 <?php
-require ("code/session.php");
+require("code/session.php");
+$naam = $_SESSION['username'];
+$naam = htmlentities($naam);
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -15,12 +19,12 @@ require ("code/session.php");
     <title>Document</title>
 </head>
 
-
 <div class="navbar" id="navbar">
     <a href="upload.php">upload</a>
-    <a href="">mijn foto's</a>
+    <a href="mijnfotos.php">mijn foto's</a>
     <a href="">contact</a>
     <a href="login.php">log uit</a>
+    <p class="welkom" href="login.php">welkom <?php echo $naam ?></p>
 
 
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
@@ -38,61 +42,60 @@ $result = mysqli_query($dbc, $query) or die ('gaat niet goed');
 
 
 echo '<div class="wrapper">';
-
 while ($row = mysqli_fetch_array($result)) {
-//    var_dump($row);
+    $username = $row['naam'];
     $locatie = $row['locatie'];
     $id = $row['id'];
     $omschrijving = $row['omschrijving'];
-
-//    $omschrijving = $row['omschrijving'];
+    $omschrijving = htmlentities($omschrijving);
+    $usermame = htmlentities($usermame);
 
 
     echo "<button id='modalBtn" . $id . "' class='button'><img class='image' src='" . $locatie . "' alt=''></button>";
 
     echo "<div id='simpleModal" . $id . "' class='modal'>
-    <div class='modal-content'>
-        <div class='modal-header'>
             <span class='closeBtn" . $id . "'>&times;</span>
-            <h2>modal header</h2>
-        </div>
+    <div class='modal-content'>
         <div class='modal-body'>
+        
             <img id='image_groot' src='" . $locatie . "' alt=''>
-            <p>" . $omschrijving . "</p>
+                        <h2>geupload door: $username</h2>
+            <p>Omschrijving:<br>" . $omschrijving . "</p>
+            
         </div>
     </div>
 </div>
 <script>
 //Get modal elements
-var modal".$id." = document.getElementById('simpleModal".$id."');
+var modal" . $id . " = document.getElementById('simpleModal" . $id . "');
 //get modal button
 
-var modalBtn".$id." = document.getElementById('modalBtn".$id."');
+var modalBtn" . $id . " = document.getElementById('modalBtn" . $id . "');
 
 //close button
-var closeBtn".$id." = document.getElementsByClassName('closeBtn".$id."')[0];
+var closeBtn" . $id . " = document.getElementsByClassName('closeBtn" . $id . "')[0];
 
 //listen for a click
-modalBtn".$id.".addEventListener('click', openModal".$id.");
+modalBtn" . $id . ".addEventListener('click', openModal" . $id . ");
 
 //listen for close
-closeBtn".$id.".addEventListener('click', closeModal".$id.");
+closeBtn" . $id . ".addEventListener('click', closeModal" . $id . ");
 //outside click
-window.addEventListener('click', clickOutside".$id.");
+window.addEventListener('click', clickOutside" . $id . ");
 
 //funcite open modal
-function openModal".$id."() {
-    modal".$id.".style.display = 'block';
+function openModal" . $id . "() {
+    modal" . $id . ".style.display = 'block';
 }
 
 //funcite close modal
-function closeModal".$id."() {
-    modal".$id.".style.display = 'none';
+function closeModal" . $id . "() {
+    modal" . $id . ".style.display = 'none';
 }
 
-function clickOutside".$id."(e){
-    if(e.target == modal".$id."){
-        modal".$id.".style.display = 'none';
+function clickOutside" . $id . "(e){
+    if(e.target == modal" . $id . "){
+        modal" . $id . ".style.display = 'none';
     }
 }
 

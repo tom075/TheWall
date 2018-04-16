@@ -1,3 +1,8 @@
+<?php
+require("code/session.php");
+$naam = $_SESSION['username'];
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,10 +17,17 @@
     <title>Document</title>
 </head>
 
+<?php
 
+$naam = htmlentities($naam);
+
+?>
 <div class="navbar" id="navbar">
+    <a href="index.php">Home</a>
+    <a href="upload.php">upload</a>
     <a href="">contact</a>
-    <a href="login.php">login</a>
+    <a href="login.php">log uit</a>
+    <p class="welkom" href="login.php">welkom <?php echo $naam ?></p>
 
 
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
@@ -24,14 +36,17 @@
 
 <?php
 require("../../private/thewall_db.php");
+$username = $_SESSION['username'];
+$username = htmlentities($username);
+
 
 $dbc = mysqli_connect(HOST, USER, PASS, DB);
 
-$query = "SELECT * FROM image_TheWall";
+$query = "SELECT * FROM image_TheWall WHERE naam ='$username' ";
 
 $result = mysqli_query($dbc, $query) or die ('gaat niet goed');
 
-
+echo "<h1 class='mijnalbum'>Mijn album</h1>";
 echo '<div class="wrapper">';
 
 while ($row = mysqli_fetch_array($result)) {
@@ -41,6 +56,7 @@ while ($row = mysqli_fetch_array($result)) {
     $omschrijving = $row['omschrijving'];
     $omschrijving = htmlentities($omschrijving);
     $username = htmlentities($username);
+
 
 
     echo "<button id='modalBtn" . $id . "' class='button'><img class='image' src='" . $locatie . "' alt=''></button>";
@@ -55,7 +71,7 @@ while ($row = mysqli_fetch_array($result)) {
                         <h2>geupload door: $username</h2>
 
             <p>Omschrijving:<br>" . $omschrijving . "</p>
-            
+    <a href='verwijderFoto.php?id=" . $id . "&locatie=". $locatie . "'>DELETE</a>
         </div>
     </div>
 </div>
@@ -102,6 +118,8 @@ function clickOutside" . $id . "(e){
 }
 echo '</div>';
 ?>
+
+
 
 <script>
     function myFunction() {

@@ -44,9 +44,6 @@ require ("code/session.php");
     }
 
 
-    function goBack() {
-        window.history.back();
-    }
 
 </script>
 </html>
