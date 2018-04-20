@@ -18,6 +18,7 @@ $naam = htmlentities($naam);
 
     <title>The Wall - Album</title>
 </head>
+<body>
 
 <div class="navbar" id="navbar">
     <a href="upload.php">upload</a>
@@ -80,7 +81,7 @@ modalBtn" . $id . ".addEventListener('click', openModal" . $id . ");
 
 //listen for close
 closeBtn" . $id . ".addEventListener('click', closeModal" . $id . ");
-//outside click
+//outside clic
 window.addEventListener('click', clickOutside" . $id . ");
 
 //funcite open modal
@@ -121,6 +122,5 @@ echo '</div>';
 
 
 </script>
-<script src="js/main.js"></script>
 </body>
 </html>
