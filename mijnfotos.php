@@ -14,7 +14,7 @@ $naam = $_SESSION['username'];
     <link rel="stylesheet" href="css/navbar_css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-    <title>Document</title>
+    <title>The Wall - Mijn Foto's</title>
 </head>
 
 <?php
@@ -133,6 +133,5 @@ echo '</div>';
 
 
 </script>
-<script src="js/main.js"></script>
 </body>
 </html>

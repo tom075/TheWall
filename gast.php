@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="css/navbar_css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-    <title>Document</title>
+    <title>The Wall - Gast</title>
 </head>
 
 
 <div class="navbar" id="navbar">
-    <a href="">contact</a>
+    <a href="contact.php">contact</a>
     <a href="login.php">login</a>
 
 

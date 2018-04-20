@@ -16,13 +16,13 @@ $naam = htmlentities($naam);
     <link rel="stylesheet" href="css/navbar_css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-    <title>Document</title>
+    <title>The Wall - Album</title>
 </head>
 
 <div class="navbar" id="navbar">
     <a href="upload.php">upload</a>
     <a href="mijnfotos.php">mijn foto's</a>
-    <a href="">contact</a>
+    <a href="contact.php">contact</a>
     <a href="login.php">log uit</a>
     <p class="welkom" href="login.php">welkom <?php echo $naam ?></p>
 

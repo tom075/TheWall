@@ -2,7 +2,10 @@
 html{
 	background-image: url("afb/wallpaper.jpg");
 	font-family: 'Roboto', sans-serif;
-
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
 }
 
 #canvas{

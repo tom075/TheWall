@@ -1,0 +1,11 @@
+image,button, .image{
+    height: 100px;
+    width: 100px;
+}
+body{
+font-size: 1.4em;
+}
+
+table,tr,td{
+    border: solid;
+}

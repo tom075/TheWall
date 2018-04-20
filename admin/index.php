@@ -11,5 +11,7 @@
 
 <a href="versturen.php">Nieuwsbrief versturen</a><br>
 <a href="beheren.php"> Gebruikers beheren</a><br>
+<a href="verwijder.php"> foto's beheren</a><br>
+
 </body>
 </html>

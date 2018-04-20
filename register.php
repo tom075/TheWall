@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/login_css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <meta charset="utf-8">
-    <title>The Wall - Login</title>
+    <title>The Wall - Register</title>
 </head>
 <body>
 <div class="wrapper">
