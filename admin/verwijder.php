@@ -1,5 +1,14 @@
 <?php
+session_start();
 
+if ($_SESSION['username'] != 'admin'){
+    header('location: ../login.php');
+
+}
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: ../login.php');
+}
 
 ?>
 <!doctype html>

@@ -1,4 +1,6 @@
 <?php
+
+
 require  ('../../private/thewall_db.php');
 
 	session_start();
@@ -9,6 +11,8 @@ require  ('../../private/thewall_db.php');
 	$_SESSION['success'] = "";
 	// connect to database
 	$db = mysqli_connect(HOST, USER, PASS, DB);
+
+
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
@@ -27,17 +31,26 @@ require  ('../../private/thewall_db.php');
 			array_push($errors, "De twee wachtwoorden komen niet overeen");
 		}
 
+        $position = strpos($email, '@ma-web.nl');
+        if (!$position){
+            array_push($errors, "Sorry u kunt alleen een mailadres van het mediacollege gebruiken");
+
+        }
+
         $user_check_query = "SELECT * FROM login_TheWall WHERE username='$username' OR email='$email' LIMIT 1";
         $result           = mysqli_query($db, $user_check_query);
         $user             = mysqli_fetch_assoc($result);
         if ($user) {
             if ($user['username'] === $username) {
-                array_push($errors, "Username already exists");
+                array_push($errors, "Deze gebruikersnaam is al in gebruik");
             }
             if ($user['email'] === $email) {
-                array_push($errors, "email already exists");
+                array_push($errors, "Dit email is al in gebruik");
             }
+
         }
+
+
 
         // register user if there are no errors in the form
 		if (count($errors) == 0) {
