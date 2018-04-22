@@ -15,7 +15,7 @@ $naam = htmlentities($naam);
     <link rel="stylesheet" href="css/album_css/style.css">
     <link rel="stylesheet" href="css/navbar_css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+    <link rel="icon" type="image/png" href="css/icon/icon.png" />
     <title>The Wall - Album</title>
 </head>
 <body>

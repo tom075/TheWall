@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/login_css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="css/icon/icon.png" />
+
     <title>The Wall - Register</title>
 </head>
 <body>

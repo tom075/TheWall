@@ -6,6 +6,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <meta charset="utf-8">
     <title>The Wall - Login</title>
+    <link rel="icon" type="image/png" href="css/icon/icon.png" />
+
 </head>
 <body>
 <div class="wrapper">

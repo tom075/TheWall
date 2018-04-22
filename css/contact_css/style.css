@@ -1,0 +1,25 @@
+
+body {
+    margin: 0;
+    background-image: url("afb/wallpaper.jpg");
+    font-size: 17px;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1, h2 {
+    color: white;
+    text-align: center;
+}
+h3 {
+    color: white;
+    text-align: left;
+}
+.wrapper{
+    width: 500px;
+    margin: 0 auto;
+}

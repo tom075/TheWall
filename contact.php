@@ -5,7 +5,40 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/contact_css/style.css">
+    <link rel="stylesheet" href="css/navbar_css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="icon" type="image/png" href="css/icon/icon.png" />
+
+    <title>The Wall - Contact</title>
 </head>
+
 <body>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38913.162547724525!2d4.803571259206872!3d52.44159854424617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5fcd955df5113%3A0xe2c14b50ac405146!2sZaandam!5e0!3m2!1sen!2snl!4v1523883959595" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></html>
+<div class="navbar" id="navbar">
+    <a href="index.php">home</a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<h1>PROJECT: THE WALL</h1>
+<h2>Gemaakt door: Tom Folkers en Merlijn Busch</h2>
+
+<div class="wrapper">
+<h2>contact:</h2>
+<h3>Email: volnion@volnion.nl          </h3>
+<h3>School: Mediacollege Amsterdam</h3>
+<h3>Opleiding: Media Developer Niveau 4</h3>
+</div>
+<script>
+    function myFunction() {
+        var x = document.getElementById("navbar");
+        if (x.className === "navbar") {
+            x.className += " responsive";
+        } else {
+            x.className = "navbar";
+        }
+    }
+
+
+</script>
+</body>
+

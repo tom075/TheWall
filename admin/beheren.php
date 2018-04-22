@@ -19,7 +19,7 @@ if (!isset($_SESSION['username'])) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/admin/style.css">
-    <title>beheren</title>
+    <title>The Wall - Gebruikers</title>
 </head>
 <body>
 

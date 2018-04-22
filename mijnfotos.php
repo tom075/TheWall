@@ -13,6 +13,7 @@ $naam = $_SESSION['username'];
     <link rel="stylesheet" href="css/album_css/style.css">
     <link rel="stylesheet" href="css/navbar_css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="icon" type="image/png" href="css/icon/icon.png" />
 
     <title>The Wall - Mijn Foto's</title>
 </head>
